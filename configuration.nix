@@ -48,6 +48,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -91,6 +92,12 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # install neovim
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -102,8 +109,6 @@
     vim
     wget
   ];
-
-  environment.variables.EDITOR = "vim";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
