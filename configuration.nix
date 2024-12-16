@@ -84,6 +84,12 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # add ZSH
+  programs.zsh.enable = true;
+
+  # Set ZSH as the default shell
+  users.defaultUserShell = pkgs.zsh;
+
   # install neovim
   programs.neovim = {
     enable = true;
