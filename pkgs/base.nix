@@ -1,4 +1,4 @@
-{config, pkgs, inputs, ... } : 
+{ config, pkgs, inputs, ... }:
 
 # Basic system packages to install across all systems
 {
@@ -6,5 +6,6 @@
     google-chrome
     bitwarden-desktop
     btop
+    killall
   ];
 }
