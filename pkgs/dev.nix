@@ -1,4 +1,4 @@
-{config, pkgs, inputs, ...} : 
+{ config, pkgs, inputs, ... }:
 
 # Packages for development
 {
@@ -19,6 +19,9 @@
     # SSH
     keychain
 
+    # [nix]
+    nixpkgs-fmt
+
     # [C/C++] Development
     gcc
     glibc
@@ -28,14 +31,19 @@
     libtool
     llvmPackages_19.clang-unwrapped
 
-    gmp gmp.dev
+    gmp
+    gmp.dev
     isl
-    libffi libffi.dev
+    libffi
+    libffi.dev
     libmpc
     libxcrypt
-    mpfr mpfr.dev
-    xz xz.dev
-    zlib zlib.dev
+    mpfr
+    mpfr.dev
+    xz
+    xz.dev
+    zlib
+    zlib.dev
 
     m4
     bison

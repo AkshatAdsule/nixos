@@ -17,7 +17,7 @@
     ];
 
   # Enable Flakes and nix-command
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -98,6 +98,11 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Install IBM Plex Nerd Font
+  fonts.packages = with pkgs; [
+    nerd-fonts.blex-mono
+  ];
 
 
   # Some programs need SUID wrappers, can be configured further or are
