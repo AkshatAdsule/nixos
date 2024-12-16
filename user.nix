@@ -5,5 +5,5 @@
     isNormalUser = true;
     description = "Akshat Adsule";
     extraGroups = [ "networkmanager" "wheel" ];
-  }
+  };
 }
