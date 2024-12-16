@@ -53,7 +53,7 @@
     # '';
 
     "./.config/nvim/" = {
-      source = ./dotfiles/nvim;
+      source = config.lib.file.mkOutOfStoreSymlink ./dotfiles/nvim;
       recursive = true;
     };
   };
