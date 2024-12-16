@@ -12,6 +12,7 @@
     ripgrep
     fd
     bat
+    file
 
     # IDEs
     vscode
