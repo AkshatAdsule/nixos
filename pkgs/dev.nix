@@ -13,6 +13,9 @@
     fd
     bat
 
+    # IDEs
+    vscode
+
     # SSH
     keychain
 
