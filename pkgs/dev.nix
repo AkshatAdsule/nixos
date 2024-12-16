@@ -52,5 +52,8 @@
     texinfo
 
     valgrind
+
+    # [js]
+    nodejs_23
   ];
 }
