@@ -100,6 +100,10 @@
       export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} || cat {}'"
       export FZF_ALT_C_COMMAND="fd --type d"
       export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+
+      # vi mode settings
+      VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+      VI_MODE_SET_CURSOR=true
     '';
 
     # Set up history file
@@ -112,7 +116,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "eastwood";
-      plugins = [ "git" ];
+      plugins = [ "git" "vi-mode" ];
     };
   };
 
