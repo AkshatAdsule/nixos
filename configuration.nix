@@ -10,6 +10,10 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       ./user.nix
+
+      # packages
+      ./pkgs/base.nix
+      ./pkgs/dev.nix
     ];
 
   # Enable Flakes and nix-command
@@ -89,15 +93,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  environment.systemPackages = with pkgs; [
-    git
-    vim
-    wget
-    vscode
-    google-chrome
-    bitwarden-desktop
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
