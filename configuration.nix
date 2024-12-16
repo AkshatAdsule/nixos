@@ -70,11 +70,11 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.akshat = {
-    isNormalUser = true;
-    description = "Akshat Adsule";
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
+  # users.users.akshat = {
+  #   isNormalUser = true;
+  #   description = "Akshat Adsule";
+  #   extraGroups = [ "networkmanager" "wheel" ];
+  # };
 
   # Install firefox.
   programs.firefox.enable = true;
