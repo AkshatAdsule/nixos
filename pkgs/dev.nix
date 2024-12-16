@@ -3,9 +3,18 @@
 # Packages for development
 {
   environment.systemPackages = with pkgs; [
+    # Shell utilities
     git
     vim
     neovim
+    fzf
+    unzip
+    ripgrep
+    fd
+    bat
+
+    # SSH
+    keychain
 
     # [C/C++] Development
     gcc
