@@ -34,6 +34,8 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    pkgs.oh-my-zsh
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -103,8 +105,14 @@
     # Set up history file
     history = {
       path = "${config.home.homeDirectory}/.histfile";
-      size = 1000;  # Size of history in memory
-      save = 1000;  # Number of entries to save to the file
+      size = 1000; # Size of history in memory
+      save = 1000; # Number of entries to save to the file
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "eastwood";
+      plugins = [ "git" ];
     };
   };
 
