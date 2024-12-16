@@ -93,6 +93,8 @@
     vim
     wget
     vscode
+    google-chrome
+    bitwarden-desktop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
