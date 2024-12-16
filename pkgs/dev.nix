@@ -1,4 +1,4 @@
-{config, pkgs, inputs} : 
+{config, pkgs, inputs, ...} : 
 
 # Packages for development
 {
