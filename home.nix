@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -92,13 +92,65 @@
 
       setopt autocd extendedglob notify
       bindkey -v
+
+      # FZF-specific Zsh configuration
+      export FZF_CTRL_T_COMMAND="fd --type f"
+      export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} || cat {}'"
+      export FZF_ALT_C_COMMAND="fd --type d"
+      export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
     '';
 
     # Set up history file
     history = {
-      path = "~/.histfile";
+      path = "${config.home.homeDirectory}/.histfile";
       size = 1000;  # Size of history in memory
       save = 1000;  # Number of entries to save to the file
     };
+  };
+
+  # FZF configuration
+  programs.fzf = {
+    enable = true;
+
+    # Customize the default command
+    defaultCommand = "fd --type f --hidden --follow --exclude .git";
+
+    # Add default options
+    defaultOptions = [
+      "--height 40%"
+      "--border"
+      "--preview 'bat --style=numbers --color=always --line-range :500 {} || cat {}'"
+    ];
+
+    # Configure the CTRL-T keybinding for file search
+    fileWidgetCommand = "fd --type f";
+
+    # Configure the ALT-C keybinding for directory navigation
+    changeDirWidgetCommand = "fd --type d";
+
+    # Configure the CTRL-R keybinding for history search
+    historyWidgetOptions = [ "--sort --exact" ];
+
+    # Enable Zsh integration
+    enableZshIntegration = true;
+
+    # Optional: Set up FZF color scheme
+    colors = {
+      bg = "#1e1e1e";
+      "bg+" = "#2e2e2e";
+      fg = "#d4d4d4";
+      "fg+" = "#f1c40f";
+    };
+
+    # Enable tmux integration (optional)
+    tmux = {
+      enableShellIntegration = true;
+    };
+  };
+
+  # Keychain configuration
+  programs.keychain = {
+    enable = true;
+    keys = [ "id_csif" "id_git" ];
   };
 }
