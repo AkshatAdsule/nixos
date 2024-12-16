@@ -73,4 +73,32 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # ZSH configuration
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    enableAutosuggestions = true;
+    enableSyntaxHighlighting = true;
+
+    # Add custom Zsh settings
+    initExtra = ''
+      zstyle ':completion:*' completer _complete _ignored _approximate
+      zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**'
+      zstyle :compinstall filename '$HOME/.zshrc'
+
+      autoload -Uz compinit
+      compinit
+
+      setopt autocd extendedglob notify
+      bindkey -v
+    '';
+
+    # Set up history file
+    history = {
+      path = "~/.histfile";
+      size = 1000;  # Size of history in memory
+      save = 1000;  # Number of entries to save to the file
+    };
+  };
 }
