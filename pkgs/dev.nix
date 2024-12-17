@@ -69,5 +69,6 @@
 
     # [js]
     nodejs_23
+    corepack
   ];
 }
