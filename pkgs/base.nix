@@ -1,5 +1,9 @@
-{ config, pkgs, inputs, ... }:
-
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 # Basic system packages to install across all systems
 {
   environment.systemPackages = with pkgs; [
@@ -7,5 +11,6 @@
     bitwarden-desktop
     btop
     killall
+    fprintd
   ];
 }

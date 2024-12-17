@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "akshat";
@@ -121,7 +124,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "eastwood";
-      plugins = [ "git" "vi-mode" ];
+      plugins = ["git" "vi-mode"];
     };
   };
 
@@ -146,7 +149,7 @@
     changeDirWidgetCommand = "fd --type d";
 
     # Configure the CTRL-R keybinding for history search
-    historyWidgetOptions = [ "--sort --exact" ];
+    historyWidgetOptions = ["--sort --exact"];
 
     # Enable Zsh integration
     enableZshIntegration = true;
@@ -168,6 +171,6 @@
   # Keychain configuration
   programs.keychain = {
     enable = true;
-    keys = [ "id_csif" "id_git" ];
+    keys = ["id_csif" "id_git"];
   };
 }

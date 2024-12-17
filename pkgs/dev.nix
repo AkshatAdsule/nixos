@@ -1,5 +1,9 @@
-{ config, pkgs, inputs, ... }:
-
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 # Packages for development
 {
   environment.systemPackages = with pkgs; [
@@ -22,6 +26,8 @@
 
     # [nix]
     nixpkgs-fmt
+    alejandra
+    libnotify
 
     # [C/C++] Development
     gcc

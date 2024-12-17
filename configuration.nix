@@ -1,23 +1,25 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, inputs, pkgs, lib, ... }:
-
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-      ./user.nix
+  config,
+  inputs,
+  pkgs,
+  lib,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ./user.nix
 
-      # packages
-      ./pkgs/base.nix
-      ./pkgs/dev.nix
-    ];
+    # packages
+    ./pkgs/base.nix
+    ./pkgs/dev.nix
+  ];
 
   # Enable Flakes and nix-command
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -104,6 +106,8 @@
     nerd-fonts.blex-mono
   ];
 
+  # Fingerprint reader
+  services.fprintd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
