@@ -13,7 +13,7 @@
 set -e
 
 # Edit your config
-$EDITOR configuration.nix
+$EDITOR /etc/nixos/configuration.nix
 
 # cd to your config dir
 pushd /etc/nixos

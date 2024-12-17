@@ -17,6 +17,7 @@
     ./pkgs/base.nix
     ./pkgs/dev.nix
     ./pkgs/work.nix
+    ./pkgs/games.nix
   ];
 
   # Enable Flakes and nix-command
