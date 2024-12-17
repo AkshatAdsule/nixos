@@ -16,6 +16,7 @@
     # packages
     ./pkgs/base.nix
     ./pkgs/dev.nix
+    ./pkgs/work.nix
   ];
 
   # Enable Flakes and nix-command
