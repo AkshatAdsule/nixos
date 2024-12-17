@@ -3,9 +3,17 @@
   pkgs,
   inputs,
   ...
-}:
-# Packages for development
-{
+}: {
+  # Enable docker
+  virtualisation.docker.enable = true;
+  virtualisation.docker.storageDriver = "btrfs";
+
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
+  # Packages for development
   environment.systemPackages = with pkgs; [
     # Shell utilities
     git
