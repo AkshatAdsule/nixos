@@ -87,6 +87,12 @@
   # globally ignore shell.nix and default.nix
   programs.git.ignores = ["shell.nix" "default.nix"];
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   # ZSH configuration
   programs.zsh = {
     enable = true;
@@ -127,7 +133,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "eastwood";
-      plugins = ["git" "vi-mode"];
+      plugins = ["git" "vi-mode" "direnv"];
     };
   };
 
