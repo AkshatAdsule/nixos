@@ -84,6 +84,9 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # globally ignore shell.nix and default.nix
+  programs.git.ignores = ["shell.nix" "default.nix"];
+
   # ZSH configuration
   programs.zsh = {
     enable = true;
