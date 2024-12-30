@@ -25,6 +25,7 @@
     fd
     bat
     file
+    lazygit
 
     # IDEs
     vscode
