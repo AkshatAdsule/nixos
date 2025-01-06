@@ -71,5 +71,10 @@
     # [js]
     nodejs_23
     corepack
+
+    # [ECS 140a]
+    go
+    clisp
+    swi-prolog
   ];
 }
