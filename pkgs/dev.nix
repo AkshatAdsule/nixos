@@ -79,5 +79,6 @@
 
     # [ECS 171]
     uv
+    devenv
   ];
 }
