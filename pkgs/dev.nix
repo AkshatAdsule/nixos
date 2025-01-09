@@ -76,5 +76,8 @@
     go
     clisp
     swi-prolog
+
+    # [ECS 171]
+    uv
   ];
 }
