@@ -111,6 +111,9 @@
   # Fingerprint reader
   services.fprintd.enable = true;
 
+  # add akshat as trusted nix store user
+  nix.settings.trusted-users = ["root" "akshat" "@wheel"];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
