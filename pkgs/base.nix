@@ -13,5 +13,10 @@
     killall
     fprintd
     wl-clipboard
+
+    # Wine
+    wineWowPackages.stable
+    winetricks
+    wineWowPackages.waylandFull
   ];
 }
