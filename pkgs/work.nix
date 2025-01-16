@@ -7,5 +7,6 @@
     slack
     obsidian
     todoist-electron
+    discord
   ];
 }
