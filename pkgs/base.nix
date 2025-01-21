@@ -13,6 +13,8 @@
     killall
     fprintd
     wl-clipboard
+    zip
+    spotify
 
     # Wine
     wineWowPackages.stable
