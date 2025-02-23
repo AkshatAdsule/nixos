@@ -106,6 +106,8 @@
   # Install IBM Plex Nerd Font
   fonts.packages = with pkgs; [
     nerd-fonts.blex-mono
+    nerd-fonts.caskaydia-mono
+    nerd-fonts.hack
   ];
 
   # Fingerprint reader
