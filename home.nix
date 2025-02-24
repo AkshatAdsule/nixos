@@ -196,10 +196,10 @@
 
     timers."kde-color-scheme" = {
       Unit = {
-        Description = "Timer to change KDE color scheme daily";
+        Description = "Timer to change KDE color scheme every 15 minutes";
       };
       Timer = {
-        OnCalendar = "*-*-* 00:00:00";
+        OnCalendar = "*-*-* *:00,15,30,45:00"; # Runs at :00, :15, :30, and :45 of every hour
         Persistent = true;
       };
       Install = {
