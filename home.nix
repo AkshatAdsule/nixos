@@ -187,8 +187,8 @@
 
   systemd.user = {
     services."kde-color-scheme" = {
-      UnitConfig.Description = "Set KDE color scheme based on time of day";
-      ServiceConfig = {
+      Unit.Description = "Set KDE color scheme based on time of day";
+      Service = {
         ExecStart = "${pkgs.python312}/bin/python ${config.lib.file.mkOutOfStoreSymlink ./dotfiles/apply_colorscheme.py}";
         Type = "oneshot";
       };
