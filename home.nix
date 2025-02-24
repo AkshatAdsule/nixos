@@ -39,6 +39,8 @@
     # '')
 
     pkgs.oh-my-zsh
+    pkgs.python312Full
+    pkgs.python312Packages.requests
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -181,5 +183,28 @@
   programs.keychain = {
     enable = true;
     keys = ["id_csif" "id_git"];
+  };
+
+  systemd.user = {
+    services."kde-color-scheme" = {
+      UnitConfig.Description = "Set KDE color scheme based on time of day";
+      ServiceConfig = {
+        ExecStart = "${pkgs.python312}/bin/python ${config.lib.file.mkOutOfStoreSymlink ./dotfiles/apply_colorscheme.py}";
+        Type = "oneshot";
+      };
+    };
+
+    timers."kde-color-scheme" = {
+      Unit = {
+        Description = "Timer to change KDE color scheme daily";
+      };
+      Timer = {
+        OnCalendar = "*-*-* 00:00:00";
+        Persistent = true;
+      };
+      Install = {
+        WantedBy = ["timers.target"];
+      };
+    };
   };
 }
