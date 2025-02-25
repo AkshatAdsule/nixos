@@ -8,7 +8,7 @@
   users.users.akshat = {
     isNormalUser = true;
     description = "Akshat Adsule";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "kvm" "libvirtd" "docker"];
   };
 
   home-manager = {
