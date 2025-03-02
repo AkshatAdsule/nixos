@@ -16,6 +16,9 @@
     zip
     spotify
 
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+
     # Wine
     wineWowPackages.stable
     winetricks

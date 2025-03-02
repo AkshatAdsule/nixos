@@ -103,6 +103,13 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.overlays = [
+    (import "${builtins.fetchTarball {
+      url = "https://github.com/vlaci/openconnect-sso/archive/master.tar.gz";
+      sha256 = "sha256:08cqd40p9vld1liyl6qrsdrilzc709scyfghfzmmja3m1m7nym94";
+    }}/overlay.nix")
+  ];
+
   # Install IBM Plex Nerd Font
   fonts.packages = with pkgs; [
     nerd-fonts.blex-mono
