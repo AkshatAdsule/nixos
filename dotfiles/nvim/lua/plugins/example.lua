@@ -8,6 +8,26 @@
 -- * override the configuration of LazyVim plugins
 return {
   -- change trouble config
+  -- add pyright to lspconfig
+  {
+    "neovim/nvim-lspconfig",
+    ---@class PluginLspOpts
+    opts = {
+      ---@type lspconfig.options
+      servers = {
+        -- pyright will be automatically installed with mason and loaded with lspconfig
+        pyright = {},
+      },
+    },
+  },
+
+  -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
+  { import = "lazyvim.plugins.extras.lang.json" },
+
+  -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
+  -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
+  { import = "lazyvim.plugins.extras.lang.typescript" },
+
   {
     "folke/trouble.nvim",
     -- opts will be merged with the parent spec
@@ -50,22 +70,6 @@ return {
     },
   },
 
-  -- add pyright to lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
-        pyright = {},
-      },
-    },
-  },
-  -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
-  -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
-  { import = "lazyvim.plugins.extras.lang.typescript" },
-
   -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
@@ -103,9 +107,6 @@ return {
     end,
   },
   
-  -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
-  { import = "lazyvim.plugins.extras.lang.json" },
-
   -- add any tools you want to have installed below
   {
     "williamboman/mason.nvim",

@@ -13,6 +13,7 @@
     inputs.home-manager.nixosModules.default
     ./user.nix
 
+    ./pulse.nix
     # packages
     ./pkgs/base.nix
     ./pkgs/dev.nix

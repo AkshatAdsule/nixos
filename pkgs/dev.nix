@@ -70,7 +70,7 @@
 
     # [js]
     nodejs_23
-    corepack
+    corepack_latest
 
     # [ECS 140a]
     go
