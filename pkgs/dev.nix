@@ -26,6 +26,7 @@
     bat
     file
     lazygit
+    ghostty
 
     # IDEs
     vscode
