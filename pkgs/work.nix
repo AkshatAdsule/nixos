@@ -9,7 +9,6 @@
     obsidian
     todoist-electron
     discord
-    firefox-devedition
     kdePackages.plasma-integration
   ];
 }
