@@ -10,6 +10,7 @@
     todoist-electron
     discord
     firefox-devedition
+    zotero
     kdePackages.plasma-integration
   ];
 }
