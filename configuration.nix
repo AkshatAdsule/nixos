@@ -91,6 +91,7 @@
 
   # add ZSH
   programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   # Set ZSH as the default shell
   users.defaultUserShell = pkgs.zsh;
