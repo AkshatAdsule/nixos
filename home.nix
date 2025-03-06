@@ -164,6 +164,7 @@
 
     # Enable Zsh integration
     enableZshIntegration = true;
+    enableFishIntegration = true;
 
     # Optional: Set up FZF color scheme
     colors = {
