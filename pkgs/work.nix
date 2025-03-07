@@ -9,7 +9,7 @@
     obsidian
     todoist-electron
     discord
-    firefox-devedition
+    firefox-devedition-bin
     zotero
     kdePackages.plasma-integration
   ];
