@@ -70,6 +70,7 @@
     valgrind
 
     # [js]
+    bun
     nodejs_23
     corepack_latest
 
