@@ -30,6 +30,7 @@
 
     # IDEs
     vscode
+    helix
 
     # SSH
     keychain
