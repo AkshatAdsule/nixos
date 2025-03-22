@@ -120,6 +120,12 @@
       export FZF_ALT_C_COMMAND="fd --type d"
       export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
+      export PNPM_HOME="/home/akshat/.local/share/pnpm"
+      case ":$PATH:" in
+        *":$PNPM_HOME:"*) ;;
+        *) export PATH="$PNPM_HOME:$PATH" ;;
+      esac
+
       # vi mode settings
       VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
       VI_MODE_SET_CURSOR=true

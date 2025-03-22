@@ -36,6 +36,7 @@
     keychain
 
     # [nix]
+    nil
     nixpkgs-fmt
     alejandra
     libnotify
@@ -74,11 +75,6 @@
     bun
     nodejs_23
     corepack_latest
-
-    # [ECS 140a]
-    go
-    clisp
-    swi-prolog
 
     # [ECS 171]
     uv
