@@ -27,7 +27,7 @@
     file
     lazygit
     ghostty
-
+    inotify-tools
     # IDEs
     vscode
     helix
