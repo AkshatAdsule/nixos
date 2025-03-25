@@ -82,5 +82,10 @@
 
     # [go]
     go
+
+    # [elixir]
+    elixir
+    erlang
+    elixir-ls
   ];
 }
