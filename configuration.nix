@@ -86,9 +86,6 @@
   #   extraGroups = [ "networkmanager" "wheel" ];
   # };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # add ZSH
   programs.zsh.enable = true;
   programs.fish.enable = true;
